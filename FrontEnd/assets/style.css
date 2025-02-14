@@ -46,18 +46,152 @@ table {
 	border-collapse: collapse;
 	border-spacing: 0;
 }
+
+nav a {
+	text-decoration: none; 
+	color: inherit;
+}
+
 /** end reset css**/
+
+/* modale */
+
+open-modal-btn {
+	display: none;
+	cursor: pointer;
+}
+
+.project-modification {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 30px;
+	margin-bottom: 2em;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+/* Contenu de la modale */
+.modal-content {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	background-color: white;
+    margin: 7% auto;
+    width: 39%;
+	padding: 30px;
+    border-radius: 10px;
+}
+
+.modal-title {
+	font-family: 'Work Sans';
+	font-size: 26px;
+	padding-top: 30px;
+	padding-bottom: 30px;
+	text-align: center;
+}
+
+.modal-content hr {
+	border: 0.5px solid #B3B3B3; 
+	width: 70%;
+	margin-bottom: 30px;
+}
+
+/* Croix pour fermer */
+.close .fa-xmark {
+    float: right;
+    cursor: pointer;
+	font-size: 20px;
+	height: auto;
+}
+
+/* Galerie d'images */
+.galleryModal {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-evenly;
+    gap: 10px;
+	padding-bottom: 30px;
+	padding-left: 100px;
+	padding-right: 100px;
+}
+
+/* Style des images */
+.galleryModal img {
+    width: 78px;
+    cursor: pointer;
+}
+
+/* Style du bouton */
+button {
+	font-family: 'Syne';
+    padding: 10px 50px;
+    background: #1D6154;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 60px;
+	font-size: 14px;
+}
+
+
+/* ICONES POUBELLE */
+
+.delete-icon {
+	position: absolute;
+	top: 5px;
+	right: 5px;
+	color: white;
+	cursor: pointer;
+	font-size: 11px;
+	background: black;
+	padding: 4px;
+	border-radius: 2px;
+}
+
+.work-item {
+	position: relative; /* Permet de positionner l'icône sur l'image */
+	display: inline-block;
+}
+  
+
+/* ICONES POUBELLE FIN*/
+
+
+.loggedUserBanner {
+	width: 100%;
+	height: 59px;
+	align-items: center;
+	justify-content: center;
+	background-color: black;
+	color: white;
+	gap: 10px;
+}
+
 body {
 	max-width: 1140px;
 	margin:auto;
 	font-family: 'Work Sans' ;
 	font-size: 14px;
+	background-color: #FFFEF8;
 }
+
 header {
 	display: flex;
 	justify-content: space-between;
 	margin: 50px 0
 }
+
 section {
 	margin: 50px 0
 }
@@ -123,8 +257,8 @@ li:hover {
 }
 #portfolio h2 {
 	text-align: center;
-	margin-bottom: 1em;
 }
+
 .gallery {
 	width: 100%;
 	display: grid;
@@ -180,9 +314,162 @@ input[type="submit"]{
 	border-radius: 60px ;
 }
 
+.forgotPassword {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-family: 'Work Sans' ;
+	font-size: 14px;
+	color: #000000;
+}
+
+/* AJOUTS LOGIN */
+
+.section-login h2 {
+	text-align: center;
+	margin-bottom: 37px;
+}
+
+.section-login {
+	width: 50%;
+	margin: auto;
+}
+
+.section-login form {
+	display: flex;
+	flex-direction: column;
+	text-align: left;
+}
+
+.input-style {
+	height: 51px;
+	font-size: 1.2em;
+	border: none;
+	box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.09);
+	margin-bottom: 52px;
+}
+
+.section-login label {
+	margin-bottom: 7px;
+}
+
+/* AJOUTS BOUTONS */
+
+.buttons-portfolio {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 10px;
+	padding-bottom: 30px;
+}
+
+.filter-button {
+	font-size: 16px;
+	font-weight: 700;
+	color: #1D6154;
+	background-color: transparent;
+	width: fit-content;
+	border: 2px solid #1D6154; 
+	cursor: pointer;
+}
+
+.filter-button.active {
+	color: white;
+	background-color: #1D6154;
+	border: none;
+}
+
+.filter-button:hover {
+	color: white;
+	background-color: #1D6154;
+	border: none;
+}
+
+/* AJOUTS DIVERS */
+
+.instagram-icon {
+	width: 19.35px;
+}
+
 footer nav ul {
 	display: flex;
 	justify-content: flex-end;
 	margin: 2em
 }
+
+
+/* AJOUTS */
+
+add-photo-btn {
+	display: flex;
+	justify-content: center;
+}
+
+.add-photo-modal {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.add-photo-modal-nav {
+	display: flex;
+	gap: 530px;
+}
+
+.fa-arrow-left, .fa-xmark {
+	float: right;
+	font-size: 20px;
+	cursor: pointer;
+}
+
+.img-upload-zone {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	background-color: #E8F1F6;
+	width: 420px;
+	height: 169px;
+}
+
+.img-upload-zone .fa-image {
+	color: #B9C5CC;
+	font-size: 68px;
+	margin-top: 20px;
+}
+
+.img-upload-btn {
+	display: inline-flex; 
+    justify-content: center;
+	white-space: nowrap; 
+    height: 36px; 
+	width: 41%;
+	background-color: #CBD6DC;
+	color: #306685;
+	font-family: 'Work Sans';
+	margin-top: 8px;
+	margin-bottom: 8px;
+}
+
+.add-photo-legend {
+	color: #444444;
+	font-size: 10px;
+}
+
+.add-photo-modal form {
+	display: flex;
+	flex-direction: column;
+	margin-top: 30px;
+	margin-bottom: 30px;
+}
+
+#work-title, #category {
+	width: 420px;
+	height: 51px;
+	font-size: 1.2em;
+	border: none;
+	box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.09);
+	margin-top: 13px;
+	margin-bottom: 13px;
+}
+
 
