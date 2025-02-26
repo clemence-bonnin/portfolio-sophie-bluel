@@ -56,8 +56,7 @@ nav a {
 
 /* modale */
 
-open-modal-btn {
-	display: none;
+.open-modal-btn {
 	cursor: pointer;
 }
 
@@ -66,7 +65,8 @@ open-modal-btn {
 	justify-content: center;
 	align-items: center;
 	gap: 30px;
-	margin-bottom: 2em;
+	margin-bottom: 4em;
+	margin-top: 10em;
 }
 
 .modal {
@@ -82,6 +82,7 @@ open-modal-btn {
 
 /* Contenu de la modale */
 .modal-content {
+	position: relative;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
@@ -105,14 +106,19 @@ open-modal-btn {
 	border: 0.5px solid #B3B3B3; 
 	width: 70%;
 	margin-bottom: 30px;
+	margin-top: 30px;
+}
+
+.close-gallery {
+    position: absolute;
+    top: 10px;
+    right: 20px;
 }
 
 /* Croix pour fermer */
-.close .fa-xmark {
-    float: right;
-    cursor: pointer;
+.close-gallery .fa-xmark {
+	cursor: pointer;
 	font-size: 20px;
-	height: auto;
 }
 
 /* Galerie d'images */
@@ -122,8 +128,14 @@ open-modal-btn {
 	justify-content: space-evenly;
     gap: 10px;
 	padding-bottom: 30px;
-	padding-left: 100px;
-	padding-right: 100px;
+	padding-left: 60px;
+	padding-right: 60px;
+}
+
+/* Pour gérer l'alignement de la dernière ligne */
+.galleryModal::after {
+    content: "";
+    flex: auto;
 }
 
 /* Style des images */
@@ -160,7 +172,7 @@ button {
 }
 
 .work-item {
-	position: relative; /* Permet de positionner l'icône sur l'image */
+	position: relative;
 	display: inline-block;
 }
   
@@ -189,7 +201,8 @@ body {
 header {
 	display: flex;
 	justify-content: space-between;
-	margin: 50px 0
+	margin-top: 50px;
+	margin-bottom: 139px
 }
 
 section {
@@ -209,7 +222,7 @@ h1 > span {
 	font-family: 'Work Sans';
 	font-size:10px;
 	letter-spacing: 0.1em;
-;
+	margin-top: 5px;
 }
 
 h2{
@@ -227,18 +240,22 @@ nav ul {
 nav li {
 	padding: 0 10px;
 	font-size: 1.2em;
+	cursor: pointer
 }
 
 li:hover {
 	color: #B1663C;
 }
+
 #introduction {
 	display: flex;
 	align-items: center;
 }
+
 #introduction figure {
 	flex: 1
 }
+
 #introduction img {
 	display: block;
 	margin: auto;
@@ -248,6 +265,7 @@ li:hover {
 #introduction article {
 	flex: 1
 }
+
 #introduction h2 {
 	margin-bottom: 1em;
 }
@@ -312,6 +330,7 @@ input[type="submit"]{
 	width: 180px;
 	text-align: center;
 	border-radius: 60px ;
+	cursor: pointer
 }
 
 .forgotPassword {
@@ -360,7 +379,7 @@ input[type="submit"]{
 	justify-content: center;
 	align-items: center;
 	gap: 10px;
-	padding-bottom: 30px;
+	margin-bottom: 50px;
 }
 
 .filter-button {
@@ -394,7 +413,8 @@ input[type="submit"]{
 footer nav ul {
 	display: flex;
 	justify-content: flex-end;
-	margin: 2em
+	margin-top: 8em;
+	margin-bottom: 1em;
 }
 
 
@@ -412,14 +432,19 @@ add-photo-btn {
 }
 
 .add-photo-modal-nav {
-	display: flex;
+    display: flex;
 	gap: 530px;
+    align-items: center;  
+    width: 100%;
+    position: absolute; 
+    left: 30px;
 }
 
-.fa-arrow-left, .fa-xmark {
-	float: right;
-	font-size: 20px;
-	cursor: pointer;
+
+.add-photo-modal-nav i {
+    font-size: 20px;
+    cursor: pointer;
+    line-height: 1; 
 }
 
 .img-upload-zone {
@@ -440,6 +465,7 @@ add-photo-btn {
 .img-upload-btn {
 	display: inline-flex; 
     justify-content: center;
+	align-items: center;
 	white-space: nowrap; 
     height: 36px; 
 	width: 41%;
@@ -448,6 +474,8 @@ add-photo-btn {
 	font-family: 'Work Sans';
 	margin-top: 8px;
 	margin-bottom: 8px;
+	border-radius: 50px ;
+	cursor: pointer;
 }
 
 .add-photo-legend {
@@ -473,3 +501,37 @@ add-photo-btn {
 }
 
 
+#filePreview {
+	display: none;
+	height: 169px;
+}
+
+/* Bouton gris (désactivé) */
+.btnValider:disabled {
+	background-color: #d3d3d3;  
+	cursor: not-allowed;  
+  }
+  
+  /* Bouton vert (activé) */
+  .btnValider {
+	cursor: pointer;  
+  }
+
+  .se-connecter {
+	height: 50px;
+    font-size: 1.2em;
+    border: none;
+    box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.09);
+  }
+
+ .close-first-view-modal {
+	display: flex;
+	width: 100%;
+ }
+
+ .close-first-view-modal .close {
+	position: absolute;
+	right: 30px;
+	font-size: 20px;
+	cursor: pointer;
+ }
