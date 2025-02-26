@@ -227,6 +227,9 @@ async function resetModalContent() {
 }
 
 
+
+
+
 // **** fonction pour récupérer et afficher les travaux dans la modale **** //
 async function updateGalleryModal() {
   try {
@@ -500,16 +503,9 @@ async function addNewWork() {
       await updateGalleryModal(); // met à jour la gallery de la modale //
       fetchProjects().then(displayProjects); // met à jour la gallery principale //
       
-       // réinitialise le formulaire pour l'ajout d'un nouveau projet //
-      form.reset(); // vide les champs du formulaire //
-      document.getElementById("filePreview").style.display = "none"; // masque l'aperçu de l'image //
-      document.querySelector(".img-upload-btn i").style.display = "block"; // réaffiche le btn d'upload //
-
+      showAddPhotoView(); 
 
   } catch (error) {
       console.error("Erreur lors de l'ajout du projet :", error);
   }
 }
-
-
-
